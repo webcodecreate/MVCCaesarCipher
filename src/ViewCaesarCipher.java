@@ -19,7 +19,7 @@ public class ViewCaesarCipher extends JFrame{
         JPanel CaesarCipher = new JPanel();
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(400, 200);
+        this.setSize(400, 120);
 
         CaesarCipher.add(firstString);
         CaesarCipher.add(firstIndex);

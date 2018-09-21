@@ -5,6 +5,8 @@ public class ModelCaesarCipher {
 
     public void encryptString(String firstString, int firstIndex){
 
+        encryptedString = "";
+
         for(int i = 0; i < firstString.length(); ++i){
             char ch = firstString.charAt(i);
 
@@ -35,6 +37,8 @@ public class ModelCaesarCipher {
 
     public void decryptString(String secondString, int secondIndex){
 
+        decryptedString = "";
+
         for(int i = 0; i < secondString.length(); ++i){
             char ch = secondString.charAt(i);
 
@@ -60,6 +64,8 @@ public class ModelCaesarCipher {
                 decryptedString += ch;
             }
         }
+
+
 
     }
 

@@ -9,17 +9,27 @@ public class ViewCaesarCipher extends JFrame{
     private JButton firstResultButton = new JButton("Encrypt");
     private JTextField firstResult  = new JTextField(10);
 
+    private JTextField secondString  = new JTextField(10);
+    private JTextField secondIndex  = new JTextField(2);
+    private JButton secondResultButton = new JButton("Decrypt");
+    private JTextField secondResult  = new JTextField(10);
+
     ViewCaesarCipher(){
 
         JPanel CaesarCipher = new JPanel();
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(400, 100);
+        this.setSize(400, 200);
 
         CaesarCipher.add(firstString);
         CaesarCipher.add(firstIndex);
         CaesarCipher.add(firstResultButton);
         CaesarCipher.add(firstResult);
+
+        CaesarCipher.add(secondString);
+        CaesarCipher.add(secondIndex);
+        CaesarCipher.add(secondResultButton);
+        CaesarCipher.add(secondResult);
 
         this.add(CaesarCipher);
 
@@ -46,6 +56,30 @@ public class ViewCaesarCipher extends JFrame{
     void addEncryptListener(ActionListener listenForFirstResultButton){
 
         firstResultButton.addActionListener(listenForFirstResultButton);
+
+    }
+
+    public String getSecondString(){
+
+        return secondString.getText();
+
+    }
+
+    public Integer getSecondIndex(){
+
+        return Integer.parseInt(secondIndex.getText());
+
+    }
+
+    public void setSecondResult(String secondResult1){
+
+        secondResult.setText(secondResult1);
+
+    }
+
+    void addDecryptListener(ActionListener listenForSecondResultButton){
+
+        secondResultButton.addActionListener(listenForSecondResultButton);
 
     }
 

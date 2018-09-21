@@ -11,6 +11,7 @@ public class ControllerCaesarCipher {
         this.theModel = theModel;
 
         this.theView.addEncryptListener(new EncryptListener());
+        this.theView.addDecryptListener(new DecryptListener());
     }
 
     class EncryptListener implements ActionListener{
@@ -28,6 +29,36 @@ public class ControllerCaesarCipher {
                 theModel.encryptString(firstString, firstIndex);
 
                 theView.setFirstResult(theModel.getEncryptedString());
+
+            }
+
+            catch(NumberFormatException ex){
+
+                System.out.println(ex);
+
+                theView.displayErrorMessage("Enter any string in first line.");
+
+            }
+
+        }
+
+    }
+
+    class DecryptListener implements ActionListener{
+
+        public void actionPerformed(ActionEvent e) {
+
+            String secondString = "";
+            int secondIndex = 0;
+
+            try{
+
+                secondString = theView.getSecondString();
+                secondIndex = theView.getSecondIndex();
+
+                theModel.decryptString(secondString, secondIndex);
+
+                theView.setSecondResult(theModel.getDecryptedString());
 
             }
 
